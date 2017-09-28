@@ -36,7 +36,6 @@ export default function({ types: t }) {
           if (callee.isIdentifier() && callee.equals('name', 'require')) {
             const moduleArg = path.get('arguments')[0];
             const argValue = moduleArg.node.value;
-            // console.log(moduleArg);
             if (moduleArg && moduleArg.isStringLiteral() && endsWith(argValue, '.html')) {
               if (path.parentPath.isVariableDeclarator()) {
                 const dir = p.dirname(p.resolve(state.file.opts.filename));
@@ -45,29 +44,7 @@ export default function({ types: t }) {
                 const html = fs.readFileSync(absolutePath, 'utf8');
                 const pathSegments = argValue.split('/');
                 const varName = pathSegments[pathSegments.length - 1];
-                console.log('argValue', argValue);
-                console.log('pathSegments', pathSegments);
                 path.replaceWith(t.stringLiteral(html));
-                // path.parentPath.replaceWith(
-                //   t.variableDeclarator(
-                //     t.identifier(varName.replace('.', '_')),
-                //     t.stringLiteral(html)
-                //   )
-                // );
-                // node.callee = t.stringLiteral(html);
-
-                // node.callee = t.variableDeclaration('var', [
-                //   t.variableDeclarator(t.identifier(varName), t.stringLiteral(html))
-                // ]);
-
-                // path.replaceWith(
-                //   t.variableDeclaration('var', [
-                //     t.variableDeclarator(
-                //       t.identifier(node.specifiers[0].local.name),
-                //       t.stringLiteral(html)
-                //     )
-                //   ])
-                // );
               }
             }
           }
