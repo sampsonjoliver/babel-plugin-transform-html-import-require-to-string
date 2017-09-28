@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-html-import-require-to-string",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Turn HTML imports and requires into string vars",
   "main": "lib/index.js",
   "scripts": {
