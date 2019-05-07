@@ -9,18 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/sampsonjoliver/babel-plugin-transform-html-import-require-to-string"
+    "url": "git+https://github.com/sampsonjoliver/babel-plugin-transform-html-import-require-to-string"
   },
-  "keywords": ["babel-plugin", "html", "import", "require", "string"],
+  "keywords": [
+    "babel-plugin",
+    "html",
+    "import",
+    "require",
+    "string"
+  ],
   "author": "Sampson J Oliver",
   "license": "MIT",
   "bugs": {
-    "url":
-      "https://github.com/sampsonjoliver/babel-plugin-transform-html-import-require-to-string/issues"
+    "url": "https://github.com/sampsonjoliver/babel-plugin-transform-html-import-require-to-string/issues"
   },
-  "homepage":
-    "https://github.com/sampsonjoliver/babel-plugin-transform-html-import-require-to-string#readme",
+  "homepage": "https://github.com/sampsonjoliver/babel-plugin-transform-html-import-require-to-string#readme",
   "devDependencies": {
     "babel-cli": "^6.4.0",
     "babel-preset-es2015": "^6.3.13"

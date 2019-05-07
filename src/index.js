@@ -37,15 +37,13 @@ export default function({ types: t }) {
             const moduleArg = path.get('arguments')[0];
             const argValue = moduleArg.node.value;
             if (moduleArg && moduleArg.isStringLiteral() && endsWith(argValue, '.html')) {
-              if (path.parentPath.isVariableDeclarator()) {
-                const dir = p.dirname(p.resolve(state.file.opts.filename));
-                const absolutePath = p.resolve(dir, argValue);
+              const dir = p.dirname(p.resolve(state.file.opts.filename));
+              const absolutePath = p.resolve(dir, argValue);
 
-                const html = fs.readFileSync(absolutePath, 'utf8');
-                const pathSegments = argValue.split('/');
-                const varName = pathSegments[pathSegments.length - 1];
-                path.replaceWith(t.stringLiteral(html));
-              }
+              const html = fs.readFileSync(absolutePath, 'utf8');
+              const pathSegments = argValue.split('/');
+              const varName = pathSegments[pathSegments.length - 1];
+              path.replaceWith(t.stringLiteral(html));
             }
           }
         }
